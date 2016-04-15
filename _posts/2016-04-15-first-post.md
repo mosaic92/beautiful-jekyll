@@ -4,7 +4,9 @@ title: First Post
 subtitle:
 ---
 
-## First Blog(or Blood)
+## First Blog
+
+First Blood!
 
 :)
 
