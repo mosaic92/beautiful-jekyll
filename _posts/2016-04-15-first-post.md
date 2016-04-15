@@ -8,4 +8,3 @@ subtitle:
 
 :)
 
-## First Blog(or Blood)
