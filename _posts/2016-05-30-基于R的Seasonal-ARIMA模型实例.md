@@ -13,6 +13,7 @@ $$
 $$
 
 其中：
+
 $$
 \Phi \left(B \right )=1-\Phi_{1}B^{12}-\Phi_{2}B^{24}\cdots \Phi_{P}B^{12P}
 $$
@@ -28,11 +29,13 @@ $$
 这个模型和ARIMA(p,d,q)看起来很相似，不过是将B转化为B的12次方，凸显以12个月为周期的季节变化。
 
 在季节变化的时间序列中更常用混合的ARIMA模型： 
+
 $$
 \Phi\left(B^{12} \right )\phi\left(B \right )\left(1-B \right )^{d} \left(1-B^{12} \right)^{D}X_{t}=\theta\left(B \right )\Theta\left(B^{12} \right )a_{t}
 $$
 
 该模型记为：
+
 $$
 ARIMA\left(p,d,q \right )\times \left(P,D,Q \right )_{12}
 $$
@@ -112,7 +115,8 @@ sigma^2 estimated as 130.8:  log likelihood = -506.15,  aic = 1022.3
 
 ```
 
-到的拟合模型为：
+得到的拟合模型为：
+
 $$
 X_{t}=\frac{(1-0.2028B)(1+0.8329B^{12})}{(1+0.1386B)(1+0.9228B^{12})}a_{t},a_{t}\sim N(0,130.8)
 $$
