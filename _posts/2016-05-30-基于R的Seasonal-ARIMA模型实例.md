@@ -53,7 +53,7 @@ a <- ts(passenger$X, start=c(1949,1),frequency = 12)
 plot(a, type="l", main="Airline Data")
 ```
 
- ![Air1](Air1.jpeg)
+ ![Air1](https://github.com/mosaic92/mosaic92.github.io/blob/master/img/airpassage/Air1.jpeg)
 
 首先我们来看看国际航空客运量在这12年里的变化情况。从图中可以看到几个非常明显的趋势。首先，客运量总体上呈现上升趋势，在战后随着经济的复苏以及全球化浪潮的影响越来越大，国际航空客运行业也越来越发达；其次是季节性的趋势，以一年十二个月为周期，航空客运量呈现周期变化的趋势，每年都拥有相似的高峰期和低谷期；最后是波动加剧的趋势，随着时间推移，每年不同月份的国际航空客运量的差异越来越大。
 根据以上时间序列图反映的长期上升趋势、季节趋势和波动加剧的趋势，显然我们可以认定这个时间序列是非平稳时间序列。首先为了波动加剧的趋势（也就是时间序列的方差在不断加大），使每年的国际航空客运量的变化更加相近，我们使用取对数的方法。
@@ -62,7 +62,7 @@ plot(a, type="l", main="Airline Data")
 plot(log(a), type="l", main="Airline Data")
 ```
 
- ![Air2](Air2.jpeg)
+ ![Air2](https://github.com/mosaic92/mosaic92.github.io/blob/master/img/airpassage/Air2.jpeg)
 
 观察图形，在取过对数后季节波动幅度不断增大的趋势被抑制了，将每年的数据进行比较，可以发现有很强的相似性，似乎就是将某一年的数据进行了纵向的平移得到的。尽管如此，之前的季节趋势和增长趋势仍是存在的，该时间序列仍然是非平稳时间序列。为了消除季节趋势和增长趋势，我们需要对该序列进行差分。那么究竟应该进行几阶的差分才可以达到我们的目的呢？这就涉及到了模型识别和定阶的内容了。
 
@@ -77,7 +77,7 @@ lga.diff <- diff(diff(log(a)),12)
 plot(lga.diff,type='l')
 ```
 
- ![Air3](Air3.jpeg)
+ ![Air3](https://github.com/mosaic92/mosaic92.github.io/blob/master/img/airpassage/Air3.jpeg)
 
 绘制差分后序列自相关图和偏自相关图
 
@@ -86,9 +86,9 @@ acf(lga.diff,main="ACF")
 pacf(lga.diff,main="PACF")
 ```
 
- ![air4](air4.jpeg)
+ ![air4](https://github.com/mosaic92/mosaic92.github.io/blob/master/img/airpassage/air4.jpeg)
 
- ![air5](air5.jpeg)
+ ![air5](https://github.com/mosaic92/mosaic92.github.io/blob/master/img/airpassage/air5.jpeg)
 
 首先考虑1阶12步差分之后，序列12阶以内的自相关系数和偏自相关系数的特征，以确定短期相关模型。自相关图和偏自相关图显示12阶以内的自相关系数和偏自相关系数均不截尾，所以尝试使用ARMA(1,1)模型提取差分后序列的短期自相关信息。
 再考虑季节自相关的特征，这是考虑延迟12阶、24阶等以周期长度为单位的自相关系数和偏自相关系数的特征。自相关图和偏自相关图均显示延迟12阶自相关系数显著非零，但是延迟24阶自相关系数落入2倍标准差范围。这时以12步为周期的ARMA(1,1)模型提取差分后序列的季节相关信息。
@@ -167,5 +167,5 @@ Dec 1961       471.2936 434.3587 508.2284 414.8065 527.7806
 
 ```
 
- ![air6](air6.jpeg)
+ ![air6](https://github.com/mosaic92/mosaic92.github.io/blob/master/img/airpassage/air6.jpeg)
 
