@@ -83,7 +83,7 @@ plot(lga.diff,type='l')
 
 ```R
 acf(lga.diff,main="ACF")
-pacf(lga.diff,main=“PACF")
+pacf(lga.diff,main="PACF")
 ```
 
  ![air4](air4.jpeg)
@@ -149,7 +149,7 @@ P值大于0.01，所以该序列不能拒绝纯随机的原假设，说明该模
 ```R
 library(forecast)
 a.fore <- forecast(a.fit,h=12)
-plot(a.fore, main=‘Forecast')
+plot(a.fore, main='Forecast')
 
          Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
 Jan 1961       449.2235 434.5558 463.8913 426.7911 471.6560
