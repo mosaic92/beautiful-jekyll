@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "基于R的Seasonal-ARIMA模型实例"
-date: 2016-02-19
+date: 2016-05-30
 categories: blog
 tags: [R,ARIMA,seasonal]
 
